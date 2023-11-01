@@ -1,9 +1,8 @@
 .navbar {
-  background-color: #1f5156;
+  background-color: #141115;
   height: 80px;
   display: flex;
   justify-content: center;
-
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
@@ -21,14 +20,8 @@
   position: relative;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-}
-
 .nav-logo {
-  color: #f5b921;
+  color: #fff;
   align-items: center;
   margin-left: 20px;
   cursor: pointer;
@@ -79,14 +72,19 @@ ul {
   color: #ffdd40;
   border: 1px solid #ffdd40;
 }
-
 .nav-icon .icon {
-  display: inline-block;
+  visibility: hidden;
   width: 2rem;
   height: 2rem;
 }
 
-@media screen and (max-width: 960px) {
+@media only screen and (max-width: 667px) {
+  .nav-icon .icon {
+    visibility: visible;
+    width: 2rem;
+    height: 2rem;
+  }
+
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -96,12 +94,11 @@ ul {
     top: 80px;
     left: -110%;
     opacity: 1;
-
     transition: all 0.5s ease;
   }
 
   .nav-menu.active {
-    background: #1f5156;
+    background: #141115;
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;
@@ -118,12 +115,12 @@ ul {
   }
 
   .nav-logo .icon {
+    display: block;
     width: 2rem;
     height: 2rem;
   }
 
   .nav-icon {
-    display: block;
     position: absolute;
     top: 50%;
     right: 0;
