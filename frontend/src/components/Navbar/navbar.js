@@ -12,6 +12,10 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
+          <NavLink exact to="/" className="nav-logo">
+            Consultant
+          </NavLink>
+
           <ul onClick={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
@@ -61,6 +65,18 @@ export default function Navbar() {
               </NavLink>
             </li>
           </ul>
+
+          <div className="nav-icon" onClick={handleClick}>
+            {click ? (
+              <span className="icon">
+                <IoMenu />
+              </span>
+            ) : (
+              <span className="icon">
+                <IoClose />
+              </span>
+            )}
+          </div>
         </div>
       </nav>
     </>
