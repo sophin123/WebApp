@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Home(props) {
+  const [data, setData] = useState(null);
+
+  console.log("data", data);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="App">
+      <header className="App-header">
+        <p>{!data ? "Loading..." : data}</p>
+      </header>
     </div>
   );
 }
